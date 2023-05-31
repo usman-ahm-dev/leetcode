@@ -10,7 +10,7 @@ from collections import defaultdict
 
 
 class Solution:
-    def groupAnagrams(self, strs: list[str]) -> list[list[str]]:
+    def group_anagrams(self, strs: list[str]) -> list[list[str]]:
         """Given an array of strings strs, groups the anagrams together
 
         Args:
