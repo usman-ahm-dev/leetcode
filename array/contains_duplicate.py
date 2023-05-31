@@ -5,7 +5,7 @@ array, and return false if every element is distinct.
 
 
 class Solution:
-    def containsDuplicate(self, nums: list[int]) -> bool:
+    def contains_duplicate(self, nums: list[int]) -> bool:
         """Returns true if any value appears at least twice in a given array, and
         returns false if every element is distinct.
 
