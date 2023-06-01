@@ -17,7 +17,7 @@ class Solution:
             j = i
             while str[j] != "#":
                 j += 1
-            length = int(str[i:j])
+            length = int(s[i:j])
             decoding.append(s[j + 1 : j + 1 + length])
             i = j + 1 + length
 
