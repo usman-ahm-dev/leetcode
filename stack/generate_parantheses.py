@@ -42,7 +42,3 @@ class Solution:
 
         backtracking(0, 0)
         return result
-
-
-obj = Solution()
-obj.generate_parenthesis(3)
