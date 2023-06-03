@@ -23,4 +23,22 @@ Return the number of car fleets that will arrive at the destination.
 
 class Solution:
     def car_fleet(self, target: int, position: list[int], speed: list[int]) -> int:
-        pass
+        """Returns the number of car fleets that will arrive at the destination.
+
+        Args:
+            target (int):
+            position (list[int]):
+            speed (list[int]):
+
+        Returns:
+            int:
+        """
+        pairs = sorted(zip(position, speed))
+        stack = []
+
+        for pos, spd in reversed(pairs):
+            stack.append((target - pos) / spd)
+            if len(stack) >= 2:
+                if stack[-1] <= stack[-2]:
+                    stack.pop()
+        return len(stack)
