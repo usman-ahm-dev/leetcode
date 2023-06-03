@@ -22,4 +22,5 @@ class Solution:
             new_max = max(max_yet, arr[i])
             arr[i] = max_yet
             max_yet = new_max
+
         return arr
