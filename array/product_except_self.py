@@ -20,16 +20,19 @@ class Solution:
         Returns:
             list[int]:
         """
-        answer = [1] * len(nums)
 
-        prefix = 1
-        for i in range(len(nums)):
-            answer[i] = prefix
-            prefix *= nums[i]
+        """
+        At each index of a list, store the result up to that point. And then
+        do the same in reverse but combine the two.
+        """
 
-        postfix = 1
+        answer = []
+        prefix_sum = 1
+        for num in nums:
+            answer.append(prefix_sum)
+            prefix_sum *= num
+        postfix_sum = 1
         for i in range(len(nums) - 1, -1, -1):
-            answer[i] *= postfix
-            postfix *= nums[i]
-
+            answer[i] *= postfix_sum
+            postfix_sum *= nums[i]
         return answer
