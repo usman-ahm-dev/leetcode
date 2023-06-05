@@ -37,6 +37,10 @@ class Solution:
         Returns:
             bool:
         """
+
+        """Easier to just read the code.
+        """
+
         rows = defaultdict(set)
         cols = defaultdict(set)
         squares = defaultdict(set)
@@ -51,7 +55,7 @@ class Solution:
                     or board[row][col] in squares[(row // 3, col // 3)]
                 ):
                     return False
-                cols[col].add(board[row][col])
                 rows[row].add(board[row][col])
+                cols[col].add(board[row][col])
                 squares[(row // 3, col // 3)].add(board[row][col])
         return True
