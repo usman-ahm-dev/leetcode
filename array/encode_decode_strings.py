@@ -6,19 +6,18 @@ sent over the network and is decoded back to the original list of strings.
 
 class Solution:
     def encode(self, strs):
-        encoding = ""
-        for string in strs:
-            encoding += str(len(string)) + "#" + string
+        encoded = []
+        for s in strs:
+            encoded.append(f"{len(s)};{s}")
+        return "".join(encoded)
 
     def decode(self, s):
-        decoding = []
-        i = 0
-        while i < len(s):
+        decoded = []
+        for i in range(len(s)):
             j = i
-            while s[j] != "#":
+            while s[i] != ";":
                 j += 1
             length = int(s[i:j])
-            decoding.append(s[j + 1 : j + 1 + length])
+            decoded.append(s[j + 1 : j + 1 + length])
             i = j + 1 + length
-
-        return decoding
+        return decoded
